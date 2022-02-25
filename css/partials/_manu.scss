@@ -1,0 +1,60 @@
+header {
+  border: 1px solid red;
+
+  width: 100%;
+  padding-top: 16px;
+}
+
+.navbar {
+  max-width: 1440px;
+  border: 1px solid red;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+
+  // por estar utilizando o scss pode extilizar uma tag filha dento da tag pai
+  li {
+    margin-left: 24px;
+  }
+}
+
+.nav-link {
+  display: inline-block;
+  border: 1px solid green;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 200;
+
+  padding: 8px 16px;
+
+  position: relative;
+
+  // por estar utilizando o scss pode extilizar uma tag filha dento da tag pai
+  &::after {
+    content: '';
+    display: block;
+    // o elemento pai sendo relativo o elemento filho vai ficar absoluto ao pai
+    position: absolute;
+    top: -50%;
+    left: 50%;
+
+    width: 5px;
+    height: 5px;
+    background: linear-gradient(180deg, rgba(233, 29, 34, 0) 0%, #E91D22 100%);
+  }
+}
