@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Mukta', sans-serif;
 }
 
 // importanto os mini arquivos que foram separados. O SCSS tem essa vantagem de
@@ -15,6 +16,28 @@ body {
   height: 100vh;
 
   background-color: #1a1a1a;
+}
+
+// as img e svg vão se ajustar ao tamanho da tela
+img, svg {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+.border {
+  border: 1px solid red;
+}
+
+p {
+  font-size: 16px;
+  color: $gray-3;
+  letter-spacing: 1px;
+  line-height: 140%;
 }
 
 @import 'partials/layout';
