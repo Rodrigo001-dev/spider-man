@@ -52,7 +52,7 @@ header {
     display: block;
     // o elemento pai sendo relativo o elemento filho vai ficar absoluto ao pai
     position: absolute;
-    top: -40%;
+    top: -70%;
     left: 50%;
 
     width: 2px;
@@ -66,7 +66,7 @@ header {
     color: $white-light;
 
     &::after {
-      height: 40px;
+      height: 36px;
     }
   }
 }
