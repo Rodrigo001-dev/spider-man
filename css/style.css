@@ -33,14 +33,12 @@ p {
 }
 
 header {
-  border: 1px solid red;
   width: 100%;
   padding-top: 16px;
 }
 
 .navbar {
   max-width: 1440px;
-  border: 1px solid red;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -88,4 +86,20 @@ header {
 }
 .nav-link:hover::after {
   height: 36px;
+}
+
+.nav-social {
+  display: flex;
+}
+.nav-social svg {
+  cursor: pointer;
+  margin-left: 16px;
+  width: 24px;
+}
+.nav-social svg path, .nav-social svg circle {
+  transition: 0.7s ease;
+}
+.nav-social svg:hover path, .nav-social svg:hover circle {
+  fill: #F02A2F;
+  transform: translate3d(0, -3px, 0);
 }/*# sourceMappingURL=style.css.map */

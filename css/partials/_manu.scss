@@ -1,13 +1,10 @@
 header {
-  border: 1px solid red;
-
   width: 100%;
   padding-top: 16px;
 }
 
 .navbar {
   max-width: 1440px;
-  border: 1px solid red;
   margin: 0 auto;
 
   display: flex;
@@ -67,6 +64,28 @@ header {
 
     &::after {
       height: 36px;
+    }
+  }
+}
+
+.nav-social {
+  display: flex;
+
+  svg {
+    cursor: pointer;
+
+    margin-left: 16px;
+    width: 24px;
+
+    path, circle {
+      transition: .7s ease;
+    }
+
+    &:hover {
+      path, circle {
+        fill: $red-light;
+        transform: translate3d(0, -3px, 0); // (x, y, z)
+      }
     }
   }
 }
