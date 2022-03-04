@@ -1,0 +1,44 @@
+// paddings e margins
+
+// vou estabelecer padrões de gaps utilizando o grid de 8 pontos(sempre soma 8px)
+$gap-1: 8px;
+$gap-2: 16px;
+$gap-3: 36px;
+$gap-4: 48px;
+$gap-5: 72px;
+
+// quando eu aplicar a classe m-1 eu quero aplicar uma margin de todos os lados
+// com o $gap-1
+.m-1 {
+  margin: $gap-1;
+}
+.m-2 {
+  margin: $gap-2;
+}
+.m-3 {
+  margin: $gap-3;
+}
+.m-4 {
+  margin: $gap-4;
+}
+.m-5 {
+  margin: $gap-5;
+}
+
+// quando eu aplicar a classe p-1 eu quero aplicar um padding de todos os lados
+// com o $gap-1
+.p-1 {
+  padding: $gap-1;
+}
+.p-2 {
+  padding: $gap-2;
+}
+.p-3 {
+  padding: $gap-3;
+}
+.p-4 {
+  padding: $gap-4;
+}
+.p-5 {
+  padding: $gap-5;
+}
