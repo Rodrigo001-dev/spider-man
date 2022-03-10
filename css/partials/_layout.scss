@@ -27,8 +27,18 @@
   align-items: flex-start;
 }
 
-.container-item-2 {
+.flex {
+  display: flex;
+}
 
+// essa classe é para forçar que o tamanho do elemento das divs do ps e da marvel
+// esteja do tamanho automatico do svg
+.w-auto {
+  width: auto;
+}
+
+.align-items-center {
+  align-items: center;
 }
 
 .spiderman {
