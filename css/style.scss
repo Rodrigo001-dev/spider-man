@@ -5,6 +5,14 @@
   font-family: 'Mukta', sans-serif;
 }
 
+// mixin são funções que o scss consegue trazer, onde eu consigo colocar funções
+@mixin responsive() {
+  // quando chegar em uma determinada resolução ele modifique o layout para mim
+  @media screen and (max-width: 960px) {
+    @content;
+  }
+}
+
 // importanto os mini arquivos que foram separados. O SCSS tem essa vantagem de
 // porder quebrar/dividir o arquivo principal em mini arquivos para ficar mais
 // limpo

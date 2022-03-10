@@ -37,7 +37,8 @@ p {
   max-width: 1440px;
   margin: 0 auto;
   padding: 36px 16px;
-  overflow: hidden;
+  border: 1px solid red;
+  height: 85vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,6 +49,15 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .container-item-1 {
@@ -218,6 +228,12 @@ header {
   margin-left: 24px;
 }
 
+@media screen and (max-width: 960px) {
+  .nav-list {
+    display: none;
+  }
+}
+
 .logo {
   max-width: 88px;
 }
@@ -278,6 +294,12 @@ header {
   fill: #F02A2F;
   -webkit-transform: translate3d(0, -3px, 0);
           transform: translate3d(0, -3px, 0);
+}
+
+@media screen and (max-width: 960px) {
+  .nav-social {
+    display: none;
+  }
 }
 
 .m-1 {

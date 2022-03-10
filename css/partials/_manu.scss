@@ -26,6 +26,10 @@ header {
   li {
     margin-left: 24px;
   }
+
+  @include responsive() {
+    display: none;
+  }
 }
 
 .logo {
@@ -91,5 +95,9 @@ header {
         transform: translate3d(0, -3px, 0); // (x, y, z)
       }
     }
+  }
+
+  @include responsive() {
+    display: none;
   }
 }

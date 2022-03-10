@@ -5,7 +5,10 @@
   padding: 36px 16px;
 
   // todos os elementos que passarem do max-width(1440px) é para esconder
-  overflow: hidden;
+  // overflow: hidden;
+
+  border: 1px solid red;
+  height: 85vh;
 
   display: flex;
   // o padrão do display flex é row, eu estou colocando isso porque quando for
@@ -15,6 +18,10 @@
   align-items: center;
   // vertical
   // justify-content: center;
+
+  @include responsive() {
+    flex-direction: column;
+  }
 }
 
 .container-item-1 {
