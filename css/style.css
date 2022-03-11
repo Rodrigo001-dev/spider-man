@@ -37,7 +37,7 @@ p {
   max-width: 1440px;
   margin: 0 auto;
   padding: 36px 16px;
-  border: 1px solid red;
+  overflow: hidden;
   height: 85vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -57,6 +57,8 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: auto;
+    overflow: none;
   }
 }
 
@@ -94,6 +96,14 @@ p {
   width: 150%;
   -webkit-transform: translate3d(-170px, 0, 0);
           transform: translate3d(-170px, 0, 0);
+}
+
+@media screen and (max-width: 960px) {
+  .spiderman {
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
 }
 
 .btn {
@@ -271,6 +281,73 @@ header {
 
 .nav-link:hover::after {
   height: 36px;
+}
+
+label {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  label {
+    display: block;
+  }
+}
+
+.bx {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .bx {
+    display: block;
+    width: 68px;
+    height: 68px;
+    background-color: #0A0C10;
+    border-radius: 8px;
+    position: relative;
+  }
+  .bx::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 70%;
+    height: 10%;
+    border-radius: 20px;
+    background-color: #EDF1F7;
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+  }
+  .bx::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    width: 40%;
+    height: 10%;
+    border-radius: 20px;
+    background-color: #EDF1F7;
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+  }
+}
+
+#bx:checked ~ label .bx:after {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  width: 70%;
+  height: 10%;
+  top: 45%;
+  left: 15%;
+}
+
+#bx:checked ~ label .bx:before {
+  -webkit-transform: rotate(-405deg);
+          transform: rotate(-405deg);
+  width: 70%;
+  height: 10%;
+  top: 45%;
+  left: 15%;
 }
 
 .nav-social {

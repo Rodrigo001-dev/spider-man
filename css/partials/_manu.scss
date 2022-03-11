@@ -76,6 +76,83 @@ header {
   }
 }
 
+label {
+  display: none;
+
+  @include responsive() {
+    display: block;
+  }
+}
+
+.bx {
+  display: none;
+
+  @include responsive() {
+    display: block;
+    width: 68px;
+    height: 68px;
+
+    background-color: $blue-dark;
+    border-radius: 8px;
+
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 30%;
+      left: 15%;
+
+      width: 70%;
+      height: 10%;
+
+      border-radius: 20px;
+
+      background-color: $white;
+
+      transition: 1s ease;
+    }
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 60%;
+      left: 45%;
+
+      width: 40%;
+      height: 10%;
+
+      border-radius: 20px;
+
+      background-color: $white;
+
+      transition: 1s ease;
+    }
+  }
+}
+
+#bx:checked ~ label .bx:after {
+  transform: rotate(225deg);
+
+  width: 70%;
+  height: 10%;
+
+  top: 45%;
+  left: 15%;
+}
+
+#bx:checked ~ label .bx:before {
+  transform: rotate(-405deg);
+
+  width: 70%;
+  height: 10%;
+
+  top: 45%;
+  left: 15%;
+}
+
 .nav-social {
   display: flex;
 
