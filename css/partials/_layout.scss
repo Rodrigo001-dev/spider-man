@@ -5,7 +5,7 @@
   padding: 36px 16px;
 
   // todos os elementos que passarem do max-width(1440px) é para esconder
-  overflow: hidden;
+  overflow: none;
 
   height: 85vh;
 
@@ -21,7 +21,7 @@
   @include responsive() {
     flex-direction: column;
     height: auto;
-    overflow: none;
+    overflow: hidden;
   }
 }
 
@@ -157,5 +157,39 @@
     &::after {
       width: 102%;
     }
+  }
+}
+
+.bg-video {
+  // o bg video é filho direto do body e o body e position relative por isso
+  // coloquei position absolute para o bg-video não atrapalhar os outros
+  // elementos
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  // alinhar verticalmente
+  justify-content: center;
+  // alinhar horizontalmente
+  align-items: center;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+
+    background: linear-gradient(101.47deg, #0A0C10 26.38%, rgba(10, 12, 16, 0.8) 50.07%, #0A0C10 73.17%);
   }
 }
