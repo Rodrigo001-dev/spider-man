@@ -38,6 +38,7 @@ header {
 
 .nav-link {
   display: inline-block;
+  z-index: 2;
 
   font-size: 14px;
   letter-spacing: 2px;
@@ -57,7 +58,7 @@ header {
     display: block;
     // o elemento pai sendo relativo o elemento filho vai ficar absoluto ao pai
     position: absolute;
-    top: -70%;
+    top: -90%;
     left: 50%;
 
     width: 2px;
@@ -155,6 +156,7 @@ label {
 
 .nav-social {
   display: flex;
+  z-index: 2;
 
   svg {
     cursor: pointer;

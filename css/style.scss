@@ -13,6 +13,12 @@
   }
 }
 
+@mixin responsive1() {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
 // importanto os mini arquivos que foram separados. O SCSS tem essa vantagem de
 // porder quebrar/dividir o arquivo principal em mini arquivos para ficar mais
 // limpo
