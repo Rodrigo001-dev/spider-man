@@ -1,0 +1,34 @@
+.logo-spiderman {
+  fill: transparent;
+
+  // tem que colocar o nome da animação o tempo, a transição ente um ponto e 
+  // outro seja do modo ease, que isso seja de maneira infinita e alternada
+  animation: logo-spiderman 12s ease infinite alternate;
+}
+
+@keyframes logo-spiderman {
+  // linha do tempo(timeline) (0, 25, 60, 100)
+  0% {
+    // a borda do svg esteja na largura 0, ou seja, não vai aparecer nada 
+    stroke-width: 0;
+    // o stroke-dasharray é uma propriedade que na primeira posição eu coloco o
+    // tamanho da borda(1) e a segunda posição é o espasamento entre os pixels
+    // aqui o tamanho da borda está baixo para a quantidade de espaçamentos
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+
+  25% {
+    stroke-width: 1;
+    fill: transparent;
+    // aqui é o tamanho da borda está granda e o tamanho do espaçamento muito
+    // pequeno, isso que vai dar o efeito de loading e vai parecer que está
+    // desenhando o svg
+    stroke-dasharray: 100 0;
+  }
+
+  60%, 100% {
+    stroke-width: 0.1;
+    fill: $white-dark;
+  }
+}
