@@ -6,24 +6,19 @@
 }
 
 // mixin são funções que o scss consegue trazer, onde eu consigo colocar funções
-@mixin responsive() {
-  // quando chegar em uma determinada resolução ele modifique o layout para mim
-  @media screen and (max-width: 960px) {
-    @content;
-  }
-}
-
-@mixin responsive1() {
-  @media screen and (max-width: 1400px) {
-    @content;
-  }
-}
+// @mixin responsive() {
+//   // quando chegar em uma determinada resolução ele modifique o layout para mim
+//   @media screen and (max-width: 960px) {
+//     @content;
+//   }
+// }
 
 // importanto os mini arquivos que foram separados. O SCSS tem essa vantagem de
 // porder quebrar/dividir o arquivo principal em mini arquivos para ficar mais
 // limpo
 // o CSS lê linha por linha por iss tenho que importar na ordem correta
 @import 'partials/colors';
+@import 'partials/spacing';
 
 body {
   width: 100%;
@@ -57,4 +52,3 @@ p {
 @import 'partials/layout';
 @import 'partials/manu';
 @import 'partials/animations';
-@import 'partials/spacing';

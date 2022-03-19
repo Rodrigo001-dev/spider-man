@@ -1,5 +1,49 @@
+// Container-devices
+$container-xl: 1440px;
+$container-l: 1140px;
+$container-m: 960px;
+$container-s: 540px;
+
+// Mixin of media-queries
+@mixin responsive($device) {
+  @if $device == xl {
+     // Para resoluções superiores a 1440px
+    @media screen and (min-width: $container-xl) {
+      @content;
+    }
+  } @else if $device == l {
+    // Para resoluções entre 1140px e 1440px
+    @media screen and (max-width: $container-xl) and (min-width: $container-l) {
+      @content;
+    }
+  } @else if $device == m {
+     // Para resoluções entre 960px e 1440px
+    @media screen and (max-width: $container-l) and (min-width: $container-s) {
+      @content;
+    }
+  } @else if $device == s {
+    // Para resoluções inferiores a 960px
+    @media screen and (max-width: $container-m) {
+      @content;
+    }
+  } @else if $device == xs {
+    // Para resoluções inferiores a 540px
+    @media screen and (max-width: $container-s) {
+      @content;
+    }
+  }
+}
+
+.initial {
+  overflow: hidden;
+
+  @include responsive(m){
+    overflow: none;
+  }
+}
+
 .container {
-  max-width: 1440px;
+  max-width:  $container-xl;
   margin: 0 auto;
 
   padding: 36px 16px;
@@ -18,21 +62,34 @@
   // vertical
   // justify-content: center;
 
-  @include responsive() {
+  @include responsive(s){
     flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 144px;
+
     height: auto;
-    overflow: hidden;
   }
 }
 
 .container-item-1 {
   max-width: 576px;
 
+  @include responsive(s){
+    max-width: 960px;
+    order: 2;
+  }
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   // nesse caso o align-items muda de direção, porque eu coloquei o flex-direction
   // como column
   align-items: flex-start;
+}
+
+.container-item-2{
+  flex-grow: 5;
 }
 
 .flex {
@@ -50,78 +107,92 @@
 }
 
 .spiderman {
-  width: 150%;
-  transform: translate3d(-170px, 0, 0);
+  width: 140%;
+  transform: translate3d(-150px,-50px,0);
   z-index: -1;
 
-  @include responsive1() {
-    width: 124%;
+  @include responsive(xl){
+    transform: translate3d(-190px,-20px,0);
+    width: 150%;
   }
 
-  @include responsive() {
+  @include responsive(s){
+    transform: translate3d(0,-20px,0);
     width: 100%;
-    transform: translate3d(0, 0, 0);
   }
 }
 
 .btn {
   display: inline-block;
+  background: linear-gradient(267.72deg, $red-light 0.88%, $red 100%);
+  border-radius: 3px;
 
   padding: 12px 32px;
-  border-radius: 3px;
+  text-transform: uppercase;
 
   transform: skewX(-10deg);
   transition: .7s ease;
-
-  text-transform: uppercase;
-  background: linear-gradient(225deg, #EA1D22 0%, #B31317 100%);
-
+  
   position: relative;
 
-  &::after {
+  &::after{
     content: '';
-    display: block;
     position: absolute;
+    display: block;
     top: -2px;
     left: -2px;
 
-    width: 30%;
-    height: 70%;
-    opacity: 0;
-    transition: .7s ease;
-
     border-radius: 3px;
+    opacity: 0;
 
-    border-top: 3px solid #FFF;
-    border-left: 3px solid #FFF;
+    width: 20%;
+    height: 70%;
+    z-index: -1;
+
+    border-top: 3px solid $white;
+    border-left: 3px solid $white;
+
+    transition: .7s ease;
   }
 
-  &::before {
+  &::before{
     content: '';
-    display: block;
     position: absolute;
+    display: block;
     bottom: -2px;
     right: -2px;
 
-    width: 30%;
-    height: 70%;
-    opacity: 0;
-    transition: .7s ease;
-
     border-radius: 3px;
+    opacity: 0;
 
-    border-bottom: 3px solid #FFF;
-    border-right: 3px solid #FFF;
+    width: 20%;
+    height: 70%;
+    z-index: -1;
+
+    border-bottom: 3px solid $white;
+    border-right: 3px solid $white;
+
+    transition: .7s ease;
   }
 
-  &:hover {
-    transform: skewX(-10deg) scale(1.05);
-    &::after {
-      opacity: 1;
-    }
+  &:hover{
+    box-shadow: 0px 14px 85px rgba(240, 42, 47, 0.06), 
+    0px 5.11023px 31.0264px rgba(240, 42, 47, 0.0413989), 
+    0px 2.48092px 15.0627px rgba(240, 42, 47, 0.0333774), 
+    0px 1.21619px 7.38404px rgba(240, 42, 47, 0.0266226), 
+    0px 0.480885px 2.91966px rgba(240, 42, 47, 0.0186011);
 
-    &::before {
+    transform: scale(1.05) skewX(-10deg);
+
+    &::after{
       opacity: 1;
+      top: -2px;
+      left: -2px;
+    }
+    &::before{
+      opacity: 1;
+      bottom: -2px;
+      right: -2px;
     }
   }
 }
@@ -141,6 +212,10 @@
   position: relative;
 
   border: 2px solid $red;
+
+  @include responsive(s){
+    display: none;
+  }
 
   &::after {
     content: '';
@@ -201,7 +276,7 @@
 
 .bg-loader {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -214,7 +289,7 @@
   // horizontalmente
   align-items: center;
 
-  overflow: hidden;
+  // overflow: hidden;
 
   background: linear-gradient(225deg, red 0%, $red-dark 100%);
 }

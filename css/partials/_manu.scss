@@ -22,12 +22,14 @@ header {
   list-style: none;
   display: flex;
 
+  z-index: 2;
+
   // por estar utilizando o scss pode extilizar uma tag filha dento da tag pai
   li {
     margin-left: 24px;
   }
 
-  @include responsive() {
+  @include responsive(s) {
     display: none;
   }
 }
@@ -80,7 +82,7 @@ header {
 label {
   display: none;
 
-  @include responsive() {
+  @include responsive(s) {
     display: block;
   }
 }
@@ -88,7 +90,7 @@ label {
 .bx {
   display: none;
 
-  @include responsive() {
+  @include responsive(s) {
     display: block;
     width: 68px;
     height: 68px;
@@ -176,7 +178,7 @@ label {
     }
   }
 
-  @include responsive() {
+  @include responsive(s) {
     display: none;
   }
 }
