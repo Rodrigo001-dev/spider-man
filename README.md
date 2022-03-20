@@ -1,4 +1,4 @@
-![spiderman-gif]()
+![spiderman-gif](https://github.com/Rodrigo001-de/spider-man/blob/main/Home-Aranha.gif)
 
 ## :page_with_curl: Projeto
 
