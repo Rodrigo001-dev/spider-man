@@ -8,7 +8,7 @@ Criando uma página web do sipderman Miles Morales para praticar conceitos bási
 
 <a href="https://pt.wikipedia.org/wiki/HTML5" target="_blank"> <img src="https://img.shields.io/badge/-HTML-red?style=flat-square&logo=HTML5&logoColor=white" alt="HTML5"> </a>
 <a href="https://sass-lang.com/guide" target="_blank"> <img src="https://img.shields.io/badge/-Scss-pink?style=flat-square&logo=sass&logoColor=white" alt="SCSS"> </a>
-<a href="https://www.javascript.com/" target="_blank"> <img src="https://img.shields.io/badge/-JavaScript-yellow?style=flat-square&logo=Javascript&logoColor=white" alt="Docker"> </a>
+<a href="https://www.javascript.com/" target="_blank"> <img src="https://img.shields.io/badge/-JavaScript-yellow?style=flat-square&logo=Javascript&logoColor=white" alt="JavaScript"> </a>
 
 
 # :eyes: Demo
